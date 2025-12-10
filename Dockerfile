@@ -11,7 +11,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
 
 FROM ubuntu:focal as base
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends fuse lsb-release nano zlib boost pthread udev sqlite mbedtls readline \
+    && apt-get install -y --no-install-recommends fuse lsb-release nano zlib1g libboost_system libboost-program-options-dev libpthread-stubs0-dev udev sqlite3 mbedtls readline \
     && rm -rf /var/lib/apt/lists/*
 COPY --from=builder /usr/bin/pcloudcc /usr/bin/pcloudcc
 COPY --from=builder /usr/lib/libpcloudcc_lib.so /usr/lib/libpcloudcc_lib.so
