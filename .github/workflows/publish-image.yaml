@@ -13,4 +13,5 @@ jobs:
           docker build . -t luxorjd/docker-image-pcloud:latest
       - name: publish
         run: |
+          docker login -u luxorjd -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push luxorjd/docker-image-pcloud:latest
