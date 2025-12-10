@@ -5,8 +5,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && apt-get install -y --reinstall ca-certificates \
     && cd /usr/src \
     && git clone https://github.com/luxorJD/pcloud-console-client \
-    && cd console-client \
-    && cd pCloudCC \
+    && cd pcloud-console-client \
     && cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr . \
     && make pclsync mbedtls install/strip
 
