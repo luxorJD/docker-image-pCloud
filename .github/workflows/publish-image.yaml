@@ -13,4 +13,4 @@ jobs:
           docker build . -t luxorjd/docker-image-pcloud:latest
       - name: publish
         run: |
-          docker push luxorJD/docker-image-pCloud:latest
+          docker push luxorjd/docker-image-pcloud:latest
