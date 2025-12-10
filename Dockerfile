@@ -2,7 +2,7 @@ FROM ubuntu:focal as builder
 ENV DEBIAN_FRONTEND="noninteractive" TZ="Europe/Berlin"
 RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends cmake g++ git libboost-program-options-dev \
     libboost-system-dev libcurl4-gnutls-dev libfuse-dev libudev-dev make zlib1g-dev \
-    libpthread-stubs0-dev sqlite3 mbedtls libreadline-dev \
+    libpthread-stubs0-dev sqlite3 libmbedtls-dev libreadline-dev \
     && apt-get install -y --reinstall ca-certificates \
     && cd /usr/src \
     && git clone https://github.com/luxorJD/pcloudcc-lneely \
