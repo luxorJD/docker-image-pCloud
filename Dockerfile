@@ -6,8 +6,6 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && cd /usr/src \
     && git clone https://github.com/luxorJD/console-client \
     && cd console-client \
-    && git fetch origin pull/163/head:tfa-support \
-    && git checkout tfa-support \
     && cd pCloudCC \
     && cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr . \
     && make pclsync mbedtls install/strip
