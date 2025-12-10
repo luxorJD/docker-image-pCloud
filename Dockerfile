@@ -4,7 +4,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     libboost-system-dev libcurl4-gnutls-dev libfuse-dev libudev-dev make zlib1g-dev \
     && apt-get install -y --reinstall ca-certificates \
     && cd /usr/src \
-    && git clone https://github.com/pcloudcom/console-client \
+    && git clone https://github.com/luxorJD/console-client \
     && cd console-client \
     && git fetch origin pull/163/head:tfa-support \
     && git checkout tfa-support \
@@ -18,6 +18,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 COPY --from=builder /usr/bin/pcloudcc /usr/bin/pcloudcc
 COPY --from=builder /usr/lib/libpcloudcc_lib.so /usr/lib/libpcloudcc_lib.so
+
+COPY fuse.conf /etc/fuse.conf
 
 # Add startup script
 COPY start.sh /
