@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && cd /usr/src \
     && git clone https://github.com/luxorJD/pcloudcc-lneely \
     && cd pcloudcc-lneely \
-    && make \
+    && cmake . \
     && make install
 
 FROM ubuntu:focal as base
