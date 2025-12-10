@@ -4,7 +4,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     libboost-system-dev libcurl4-gnutls-dev libfuse-dev libudev-dev make zlib1g-dev \
     && apt-get install -y --reinstall ca-certificates \
     && cd /usr/src \
-    && git clone https://github.com/luxorJD/console-client \
+    && git clone https://github.com/luxorJD/pcloud-console-client \
     && cd console-client \
     && cd pCloudCC \
     && cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr . \
