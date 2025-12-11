@@ -28,16 +28,16 @@ fi
 if [ ! -f /root/.pcloud/data.db ]
 then
   echo "Starting pcloud Container, please run the folloring line to login to pcloud"
-  echo "/usr/bin/pcloudcc -u ${PCLOUD_USER} -m ${PCLOUD_MOUNT} -p -s ${PCLOUD_2FA}"
+  echo "PCLOUD_REGION_EU=true /usr/bin/pcloudcc -u ${PCLOUD_USER} -m ${PCLOUD_MOUNT} -p -s ${PCLOUD_2FA}"
   exec sleep infinity
 fi
 
 if [ "${PCLOUD_CRYPT}" != "" ]
 then
   echo "Starting pCloud comman client + Crypt"
-  exec echo "${PCLOUD_CRYPT}" | /usr/bin/pcloudcc --username ${PCLOUD_USER} --mountpoint ${PCLOUD_MOUNT} -c
+  exec echo "${PCLOUD_CRYPT}" | PCLOUD_REGION_EU=true /usr/bin/pcloudcc --username ${PCLOUD_USER} --mountpoint ${PCLOUD_MOUNT} -c
 else
   echo "Starting pCloud command client"
-  exec /usr/bin/pcloudcc --username ${PCLOUD_USER} --mountpoint ${PCLOUD_MOUNT}
+  exec PCLOUD_REGION_EU=true /usr/bin/pcloudcc --username ${PCLOUD_USER} --mountpoint ${PCLOUD_MOUNT}
 fi
 
