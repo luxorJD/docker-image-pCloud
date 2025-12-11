@@ -9,7 +9,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && cd pcloud-console-client \
     && git submodule init \
     && git submodule update \
-    && echo "her er jeg" \
+    && ls -laF \
     && mkdir build \
     && cd build \
     && cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr .. \
