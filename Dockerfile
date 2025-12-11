@@ -11,6 +11,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && git submodule update \
     && ls -laF \
     && mkdir build \
+    && pwd \
+    && ls -laF \
     && cd build \
     && cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr .. \
     && cmake --build .
