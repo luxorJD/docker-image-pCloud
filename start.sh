@@ -35,9 +35,11 @@ fi
 if [ "${PCLOUD_CRYPT}" != "" ]
 then
   echo "Starting pCloud comman client + Crypt"
-  exec echo "${PCLOUD_CRYPT}" | PCLOUD_REGION_EU=true /usr/bin/pcloudcc --username ${PCLOUD_USER} --mountpoint ${PCLOUD_MOUNT} -c
+  PCLOUD_REGION_EU=true
+  exec echo "${PCLOUD_CRYPT}" | /usr/bin/pcloudcc --username ${PCLOUD_USER} --mountpoint ${PCLOUD_MOUNT} -c
 else
   echo "Starting pCloud command client"
-  exec PCLOUD_REGION_EU=true /usr/bin/pcloudcc --username ${PCLOUD_USER} --mountpoint ${PCLOUD_MOUNT}
+  PCLOUD_REGION_EU=true
+  exec /usr/bin/pcloudcc --username ${PCLOUD_USER} --mountpoint ${PCLOUD_MOUNT}
 fi
 
