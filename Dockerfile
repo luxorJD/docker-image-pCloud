@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && cd /usr/src \
     && git clone https://github.com/luxorJD/pcloud-console-client \
     && cd pcloud-console-client \
-    && git submodule sync
+    && git submodule sync \
     && git submodule init \
     && git submodule update --init \
     && mkdir build \
