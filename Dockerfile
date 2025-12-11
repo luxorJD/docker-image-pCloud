@@ -16,7 +16,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && cd /usr/src/pcloud-console-client/build \
     && pwd \
     && ls -laF \
-    && cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr .. \
+    && cmake -D CMAKE_BUILD_TYPE=Release .. \
     && cmake --build .
 
 FROM ubuntu:focal as base
