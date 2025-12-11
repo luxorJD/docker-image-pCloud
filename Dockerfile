@@ -23,8 +23,8 @@ FROM ubuntu:focal as base
 RUN apt-get update \
     && apt-get install -y --no-install-recommends fuse lsb-release nano \
     && rm -rf /var/lib/apt/lists/*
-COPY --from=builder /usr/bin/pcloudcc /usr/bin/pcloudcc
-COPY --from=builder /usr/lib/libpcloudcc_lib.so /usr/lib/libpcloudcc_lib.so
+# COPY --from=builder /usr/bin/pcloudcc /usr/bin/pcloudcc
+# COPY --from=builder /usr/lib/libpcloudcc_lib.so /usr/lib/libpcloudcc_lib.so
 
 COPY fuse.conf /etc/fuse.conf
 
