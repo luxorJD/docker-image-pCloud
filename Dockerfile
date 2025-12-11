@@ -17,7 +17,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && pwd \
     && ls -laF \
     && cmake -D CMAKE_BUILD_TYPE=Release .. \
-    && cmake --build .
+    && cmake --build . --target install
 
 FROM ubuntu:focal as base
 RUN apt-get update \
