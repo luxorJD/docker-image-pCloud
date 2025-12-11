@@ -14,6 +14,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && pwd \
     && ls -laF \
     && cd build \
+    && pwd \
+    && ls -laF \
     && cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr .. \
     && cmake --build .
 
