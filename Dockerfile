@@ -5,7 +5,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     gcc libsqlite3-dev make pkg-config libreadline-dev \
     && apt-get install -y --reinstall ca-certificates \
     && cd /usr/src \
-    && git clone https://github.com/luxorJD/pcloudcc-lneely \
+    && git clone https://github.com/luxorJD/pcloud-console-client \
     && cd pcloud-console-client \
     && git submodule init \
     && git submodule update \
