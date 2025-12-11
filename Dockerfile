@@ -13,7 +13,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && mkdir build \
     && pwd \
     && ls -laF \
-    && cd build \
+    && cd /usr/src/pcloud-console-client \
     && pwd \
     && ls -laF \
     && cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr .. \
