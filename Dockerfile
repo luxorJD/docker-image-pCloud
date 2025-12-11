@@ -7,9 +7,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     && cd /usr/src \
     && git clone https://github.com/luxorJD/pcloud-console-client \
     && cd pcloud-console-client \
-    && git submodule sync \
     && git submodule init \
-    && git submodule update --init \
+    && git submodule update \
     && mkdir build \
     && cd build \
     && cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr .
